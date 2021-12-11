@@ -16,13 +16,13 @@ summary(mecha_lm)
 
 #Deliverable 2
 #read Suspension_coil.csv file
-Suspension_Coil <- read.csv(file='Suspension_Coil.csv',check.names=F,stringsAsFactors = F)
+Suspension_Coil <- read.csv(file='Sus.csv',check.names=F,stringsAsFactors = F)
 
-#total_summary dataframe
-total_summary <- Suspension_Coil %>% summarize(Mean=mean(PSI),Median=(PSI),Variance=var(PSI),SD=sd(PSI)) 
+#create total_summary dataframe
+total_summary <- Suspension_Coil %>% group_by(Manufacturing_Lot)%>% 
 
 # lot_summary dataframe
-lot_summary <- Suspension_Coil %>% group_by(Manufacturing_Lot) %>% summarize(Mean=mean(PSI),Median=(PSI),Variance=var(PSI),SD=sd(PSI))
+summarize(Mean=mean(PSI),Median=median(PSI),Variance=var(PSI),SD=sd(PSI),.groups='keep')
 
 #Deliverable 3
 # t.test function
