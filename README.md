@@ -1,3 +1,4 @@
+![This is an image](https://github.com/Fbullman/MechaCar_Statistical_Analysis/blob/main/Images/6-features-to-look-for-in-your-college-car-810x463.jpg)
 # MechaCar_Statistical_Analysis
 
 # Deliverable 1
